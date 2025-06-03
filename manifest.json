@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "KWCAG 2.2 Checker (act-kwacg)",
+  "version": "0.1.0",
+  "description": "KWCAG 2.2 웹 접근성 검사 도구(axe-core 기반)",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "commands"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "data/kwcag-criteria.json",
+        "data/ko.json",
+        "js/lib/axe.js",
+        "js/components/overlay.js",
+        "panel/panel.html",
+        "panel/panel.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "KWCAG 검사기 실행/숨김"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/lib/axe.js", "js/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "devtools_page": "devtools.html"
+}

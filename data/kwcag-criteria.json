@@ -1,0 +1,468 @@
+[
+  {
+    "kwcagId": "5.1.1",
+    "kwcagTitle": "대체 텍스트 제공",
+    "description": "텍스트 아닌 콘텐츠에는 그 의미나 용도를 인식할 수 있도록 대체 텍스트를 제공해야 한다.",
+    "automationType": "partial",
+    "axeRules": ["image-alt", "input-image-alt", "object-alt", "area-alt", "svg-img-alt"],
+    "manualCheckGuidance": [
+      "axe-core가 'image-alt' 위반을 보고하지 않았더라도, 제공된 대체 텍스트가 이미지의 내용이나 기능을 적절히 설명하는지 확인하십시오.",
+      "장식 목적의 이미지에는 빈 alt 속성(alt=\"\")이 제공되었는지 확인하십시오.",
+      "복잡한 이미지(차트, 다이어그램 등)의 경우, 이미지 자체의 대체 텍스트 외에 상세 설명을 별도로 제공하는지 확인하십시오.",
+      "CSS를 사용하여 배경 이미지로 삽입된 이미지가 중요한 정보를 전달하는 경우, 해당 정보가 다른 방식으로도 제공되는지 확인하십시오. (예: 스크린 리더 사용자를 위한 숨김 텍스트)",
+      "SVG 이미지의 경우, <title> 요소, <desc> 요소, aria-label, aria-labelledby 등의 ARIA 속성을 통해 적절한 대체 텍스트가 제공되었는지 확인하고, 그 내용이 SVG의 목적이나 정보를 정확히 전달하는지 검토하십시오.",
+      "오디오 파일에 대체 텍스트가 필요한지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#non-text-content",
+    "translations": {
+      "image-alt": {
+        "help": "이미지에는 적절한 대체 텍스트가 있어야 합니다.",
+        "description": "모든 이미지 요소는 대체 텍스트(alt 속성)를 가져야 합니다. 이 텍스트는 이미지가 전달하는 정보나 기능을 적절히 설명해야 하며, 장식 목적의 이미지에는 빈 alt 속성(alt=\"\")을 사용해야 합니다.",
+        "relatedKwcagLink": "https://a11ykr.github.io/kwcag22/#non-text-content"
+      },
+      "svg-img-alt": {
+        "help": "SVG 이미지에는 접근 가능한 텍스트가 제공되어야 합니다.",
+        "description": "의미를 전달하는 SVG 요소는 <title> 요소, aria-label, aria-labelledby 등을 통해 접근 가능한 텍스트를 제공해야 합니다. 장식용 SVG는 aria-hidden=\"true\"를 사용하거나 접근 가능한 텍스트를 제공하지 않아야 합니다.",
+        "relatedKwcagLink": "https://a11ykr.github.io/kwcag22/#non-text-content"
+      }
+    }
+  },
+  {
+    "kwcagId": "5.2.1",
+    "kwcagTitle": "자막 제공",
+    "description": "멀티미디어 콘텐츠에는 자막, 대본 또는 수어를 제공해야 한다.",
+    "automationType": "partial",
+    "axeRules": ["audio-caption", "video-caption"],
+    "manualCheckGuidance": [
+      "오디오 전용 콘텐츠의 경우, 모든 대화 및 중요한 소리 정보를 포함하는 전체 텍스트 대본이 제공되는지 확인하십시오.",
+      "비디오 전용 콘텐츠의 경우, 비디오의 중요한 시각적 정보를 전달하는 텍스트 대본 또는 음성 설명이 제공되는지 확인하십시오.",
+      "음성이 포함된 비디오 콘텐츠의 경우, 모든 대화 및 중요한 비음성 정보를 포함하는 자막이 제공되고, 비디오와 정확히 동기화되어 표시되는지 확인하십시오.",
+      "비디오 콘텐츠의 경우, 중요한 시각적 정보를 설명하는 음성 설명이 제공되고, 비디오와 정확히 동기화되어 제공되는지 확인하십시오. 음성 설명이 없다면, 비디오의 모든 시각적 및 청각적 정보를 포함하는 전체 미디어 대체 수단(예: 확장된 텍스트 대본)이 제공되는지 확인하십시오.",
+      "제공된 모든 대체 수단(텍스트 대본, 자막, 음성 설명)이 원본 콘텐츠의 모든 중요한 정보를 정확하고 완전하게 전달하는지 검토하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#time-based-media-alternative",
+    "translations": {
+      "audio-caption": {
+        "help": "오디오 콘텐츠에는 캡션이나 텍스트 대본이 제공되어야 합니다.",
+        "description": "오디오 전용 콘텐츠의 경우, 콘텐츠의 모든 대화 및 중요한 소리 정보를 포함하는 캡션이나 텍스트 대본이 제공되어야 합니다.",
+        "relatedKwcagLink": "https://a11ykr.github.io/kwcag22/#time-based-media-alternative"
+      },
+      "video-caption": {
+        "help": "음성이 포함된 비디오 콘텐츠에는 자막이 제공되어야 합니다.",
+        "description": "음성 콘텐츠가 포함된 비디오의 경우, 모든 대화 및 중요한 비음성 정보를 포함하는 자막이 제공되어야 하며, 비디오와 정확히 동기화되어야 합니다.",
+        "relatedKwcagLink": "https://a11ykr.github.io/kwcag22/#time-based-media-alternative"
+      }
+    }
+  },
+  {
+    "kwcagId": "5.3.1",
+    "kwcagTitle": "표의 구성",
+    "description": " 표는 이해하기 쉽게 구성해야 한다.",
+    "automationType": "partial",
+    "axeRules": ["td-headers-attr","th-has-data-cells","scope-attr-valid"],
+    "manualCheckGuidance": [
+      "표 정보 제공: 데이터를 표로 구성할 경우, 표의 내용, 구조 등을 이해할 수 있는 정보를 제공하여 표의 이용 방법을 예측할 수 있도록 해야 합니다.",
+      "표를 레이아웃을 작성하기 위한 용도로 사용할 경우 의미있는 태그를 사용해서는 안됩니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#table-structure"
+  },
+  {
+    "kwcagId": "5.3.2",
+    "kwcagTitle": "콘텐츠의 논리적 순서",
+    "description": "콘텐츠는 논리적인 순서로 제공되어야 하며, 화면낭독기 등 보조기술로도 그 순서가 유지되어야 합니다.",
+    "automationType": "partial",
+    "axeRules": ["tabindex", "heading-order", "p-as-heading"],
+    "manualCheckGuidance": [
+      "화면에 표시된 순서대로 콘텐츠를 읽었을 때 의미가 통하는지 확인하십시오.",
+      "CSS를 사용하지 않도록 설정했을 때 콘텐츠가 논리적인 순서로 표시되는지 확인하십시오.",
+      "화면낭독기를 사용하여 콘텐츠를 탐색했을 때 논리적인 순서로 읽어주는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#linear-structure"
+  },
+  {
+    "kwcagId": "5.3.3",
+    "kwcagTitle": "명확한 지시사항 제공",
+    "description": "지시사항은 모양, 크기, 위치, 방향, 색, 소리 등에 관계없이 인식될 수 있어야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "지시사항이 '오른쪽 파란색 버튼을 클릭하세요' 또는 '빨간색으로 표시된 항목을 수정하세요'와 같이 모양, 색상, 크기, 시각적 위치, 방향 또는 소리에만 의존하여 제공되지 않는지 확인하십시오.",
+      "예를 들어, '필수 항목은 빨간색으로 표시됩니다'라는 지시사항 대신 '필수 항목은 빨간색 별표(*)로 표시됩니다'와 같이 색상 외의 시각적 단서를 함께 제공하는지 확인하십시오.",
+      "지시사항이 소리에만 의존하는 경우(예: '삐 소리가 나면 다음 단계로 진행하세요'), 시각적인 알림도 함께 제공되는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#providing-instructions"
+  },
+  {
+    "kwcagId": "5.4.1",
+    "kwcagTitle": "색에 무관한 콘텐츠 인식",
+    "description": "콘텐츠는 색에 관계없이 인식될 수 있어야 한다.",
+    "automationType": "partial",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "정보를 전달하거나, 사용자 행동을 유도하거나, 응답을 요청하거나, 시각적 요소를 구별하기 위해 색상만이 유일한 시각적 수단으로 사용되지 않았는지 확인하십시오.",
+      "텍스트 블록 내의 링크가 색상 외에 밑줄과 같은 다른 시각적 단서로도 구분되는지 확인하십시오. (Axe 규칙 'link-in-text-block'이 이 부분을 일부 검사합니다.)",
+      "오류 필드, 성공 메시지, 경고 등 상태 정보가 색상 외에 아이콘, 텍스트 레이블, 굵은 글씨 또는 기타 시각적 단서로도 전달되는지 확인하십시오.",
+      "차트나 그래프에서 데이터를 구분하기 위해 색상 외에 패턴, 모양, 텍스트 레이블 등을 사용하는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#use-of-color"
+  },
+  {
+    "kwcagId": "5.4.2",
+    "kwcagTitle": "자동 재생 금지",
+    "description": "자동으로 소리가 재생되지 않아야 한다.",
+    "automationType": "partial",
+    "axeRules": ["no-autoplay-audio"],
+    "manualCheckGuidance": [
+      "페이지 로드 시 3초를 초과하여 자동으로 재생되는 오디오 또는 비디오 콘텐츠가 있는지 확인하십시오.",
+      "자동으로 재생되는 오디오가 있다면, 사용자가 이를 쉽게 정지, 일시정지 또는 음소거할 수 있는 컨트롤을 제공하는지 확인하십시오.",
+      "배경 음악이나 효과음 등 모든 종류의 자동 재생 소리에 대해 점검하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#audio-control"
+  },
+  {
+    "kwcagId": "5.4.3",
+    "kwcagTitle": "텍스트 콘텐츠의 명도 대비",
+    "description": "텍스트 콘텐츠와 배경 간의 명도 대비는 4.5 대 1 이상이어야 한다.",
+    "automationType": "partial",
+    "axeRules": ["color-contrast"],
+    "manualCheckGuidance": [
+      "일반 텍스트(18pt 미만 또는 14pt 미만이면서 볼드체가 아닌 경우)와 배경 간의 명도 대비가 4.5:1 이상인지 확인하십시오. (Axe 규칙 'color-contrast'가 이 부분을 검사합니다.)",
+      "큰 텍스트(18pt 이상 또는 14pt 이상이면서 볼드체인 경우)와 배경 간의 명도 대비가 3:1 이상인지 확인하십시오. (Axe 규칙 'color-contrast'가 이 부분을 검사합니다.)",
+      "이미지 위에 놓인 텍스트, 그라데이션 배경 위의 텍스트, 비활성화된 요소의 텍스트 등 자동 검사 도구가 정확히 판단하기 어려운 경우의 명도 대비를 수동으로 확인하십시오.",
+      "로고나 장식 목적의 텍스트에는 명도 대비 요구사항이 적용되지 않을 수 있으나, 중요한 정보를 전달하는 텍스트라면 명도 대비를 준수해야 합니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#text-contrast"
+  },
+  {
+    "kwcagId": "5.4.4",
+    "kwcagTitle": "콘텐츠 간의 구분",
+    "description": "이웃한 콘텐츠는 구별될 수 있어야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "인접한 콘텐츠 블록(예: 단락, 목록 항목, 사이드바, 주요 콘텐츠 영역)이 시각적으로 명확하게 구분되는지 확인하십시오. (예: 충분한 여백, 경계선, 배경색 차이 등)",
+      "링크, 버튼, 폼 필드 등 상호작용 가능한 요소들이 주변 콘텐츠와 시각적으로 구분되어 쉽게 식별할 수 있는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#consistent-identification"
+  },
+  {
+    "kwcagId": "6.1.1",
+    "kwcagTitle": "키보드 사용 보장",
+    "description": "모든 기능은 키보드만으로도 사용할 수 있어 야 한다. ",
+    "automationType": "partial",
+    "axeRules": ["scrollable-region-focusable", "tabindex", "aria-command-name", "aria-toggle-field-name"],
+    "manualCheckGuidance": [
+      "페이지의 모든 대화형 요소(링크, 버튼, 양식 필드, 사용자 정의 컨트롤 등)에 키보드(Tab, Shift+Tab 키)로 접근할 수 있는지 확인하십시오.",
+      "키보드로 접근한 모든 대화형 요소가 키보드(Enter, Space, 화살표 키 등)로 실행 가능한지 확인하십시오.",
+      "키보드 포커스가 특정 요소에 갇혀 빠져나올 수 없는 '키보드 함정'이 없는지 확인하십시오.",
+      "마우스 오버 또는 마우스 클릭으로만 나타나는 콘텐츠나 기능이 있다면, 해당 콘텐츠나 기능에 키보드만으로도 접근하고 사용할 수 있는지 확인하십시오.",
+      "사용자 정의 위젯(예: 슬라이더, 트리 메뉴, 자동 완성 입력란)이 표준 키보드 조작 관례를 따르는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#keyboard"
+  },
+  {
+    "kwcagId": "6.1.2",
+    "kwcagTitle": "초점 이동과 표시",
+    "description": "키보드에 의한 초점은 논리적으로 이동해야 하며, 시각적으로 구별할 수 있어야 한다.",
+    "automationType": "partial",
+    "axeRules": ["aria-hidden-focus"],
+    "manualCheckGuidance": [
+      "키보드로 페이지를 탐색할 때(Tab, Shift+Tab 키 사용), 초점이 논리적인 순서로 이동하는지 확인하십시오. 일반적으로 시각적 흐름과 일치해야 합니다.",
+      "키보드 초점을 받은 요소는 명확하게 시각적으로 구분되어야 합니다. (예: 윤곽선, 배경색 변경 등) (Axe 규칙 'focus-visible'이 이 부분을 검사합니다.)",
+      "모든 대화형 요소가 키보드 초점을 받을 수 있는지, 그리고 초점을 받았을 때 시각적으로 표시되는지 확인하십시오.",
+      "모달 대화상자나 드롭다운 메뉴 등이 열렸을 때, 초점이 해당 컴포넌트 내부로 적절히 이동하고, 닫혔을 때는 이전 위치로 논리적으로 복귀하는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#focus"
+  },
+  {
+    "kwcagId": "6.1.3",
+    "kwcagTitle": "조작 가능",
+    "description": "사용자 입력 및 콘트롤은 조작 가능하도록 제공되어야 한다.",
+    "automationType": "partial",
+    "axeRules": ["target-size"],
+    "manualCheckGuidance": [
+      "대화형 컨트롤(버튼, 링크 등)의 크기가 조작하기에 충분한지 확인하십시오. (예: 최소 24x24 CSS 픽셀, WCAG 2.5.8 Target Size (Minimum) AA 기준 참고)",
+      "터치 스크린 환경에서 인접한 타겟 사이에 충분한 간격이 있어 의도하지 않은 터치를 방지할 수 있는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#target"
+  },
+  {
+    "kwcagId": "6.1.4",
+    "kwcagTitle": "문자 단축키",
+    "description": "문자 단축키는 오동작으로 인한 오류를 방지하여야 한다.",
+    "automationType": "partial",
+    "axeRules": ["accesskeys"],
+    "manualCheckGuidance": [
+      "웹사이트나 웹 애플리케이션에서 단일 문자 키(예: 'a', 'm', '?')를 단축키로 사용하는 경우, 다음 중 하나 이상의 방법으로 오동작을 방지하는지 확인하십시오:",
+      "  - 단축키를 끌 수 있는 메커니즘 제공",
+      "  - 단축키를 Ctrl, Alt, Shift 등 보조 키와 함께 사용하도록 재매핑할 수 있는 메커니즘 제공",
+      "  - 단축키가 특정 컴포넌트에 초점이 있을 때만 활성화되도록 제한",
+      "accesskey 속성이 사용된 경우, 그 값이 페이지 내에서 고유한지 확인하십시오. (Axe 규칙 'accesskey'가 중복을 검사합니다.)",
+      "문자 단축키가 일반적인 텍스트 입력이나 보조 기술의 키보드 명령과 충돌하지 않는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#character-key-shortcuts"
+  },
+  {
+    "kwcagId": "6.2.1",
+    "kwcagTitle": "응답시간 조절",
+    "description": "시간제한이 있는 콘텐츠는 응답시간을 조절할 수 있어야 한다.",
+    "automationType": "partial",
+    "axeRules": ["meta-refresh"],
+    "manualCheckGuidance": [
+      "시간 제한이 있는 콘텐츠(예: 세션 타임아웃, 자동 업데이트되는 정보)에 대해 사용자가 시간을 조절하거나, 시간 제한을 끄거나, 연장할 수 있는 수단을 제공하는지 확인하십시오. (Axe 규칙 'meta-refresh'가 클라이언트 측 자동 새로고침을 일부 탐지합니다.)",
+      "20시간 이상의 예외(예: 실시간 경매)나 필수적인 예외(예: 게임)를 제외하고, 모든 종류의 시간 제한에 대해 사용자가 제어할 수 있는지 확인하십시오.",
+      "시간 만료 최소 20초 전에 사용자에게 경고하고, 간단한 조작으로 시간을 연장할 수 있는 옵션을 제공하는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#timing-adjustable"
+  },
+  {
+    "kwcagId": "6.2.2",
+    "kwcagTitle": "정지 기능 제공",
+    "description": "자동으로 변경되는 콘텐츠는 움직임을 제어할 수 있어야 한다.",
+    "automationType": "partial",
+    "axeRules": ["blink", "marquee"],
+    "manualCheckGuidance": [
+      "자동으로 시작되고 5초 이상 지속되며 다른 콘텐츠와 병행하여 표시되는 움직이는, 깜빡이는, 스크롤되는 콘텐츠(예: 캐러셀, 애니메이션 배너, 뉴스 티커)에 대해 사용자가 이를 정지, 일시정지 또는 숨길 수 있는 메커니즘을 제공하는지 확인하십시오. (Axe 규칙 'blink', 'marquee'가 일부 레거시 요소를 탐지합니다.)",
+      "순수하게 장식적이거나 애니메이션이 정보 전달에 필수적인 경우는 예외일 수 있으나, 대부분의 경우 사용자 제어 기능이 필요합니다.",
+      "자동 업데이트되는 정보(예: 주식 시세, 스포츠 점수)에 대해 사용자가 업데이트를 일시정지하거나, 빈도를 조절하거나, 숨길 수 있는 방법을 제공하는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#pause-stop-hide"
+  },
+  {
+    "kwcagId": "6.3.1",
+    "kwcagTitle": "깜빡임과 번쩍임 사용 제한",
+    "description": "초당 3~50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 한다.",
+    "automationType": "manual",
+    "axeRules": ["blink"],
+    "manualCheckGuidance": [
+      "페이지의 어떤 부분도 1초 동안 3회를 초과하여 깜빡이거나 번쩍이지 않는지 확인하십시오. (Axe 규칙 'blink'는 `<blink>` 요소를 탐지하지만, CSS나 JavaScript 애니메이션은 수동 확인이 필요합니다.)",
+      "특히 큰 영역에서 발생하는 번쩍임은 광과민성 발작을 유발할 수 있으므로 주의해야 합니다.",
+      "번쩍임이 일반적인 번쩍임 임계값(general flash thresholds) 및 적색 번쩍임 임계값(red flash thresholds)을 초과하지 않는지 확인하십시오. (필요시 전문가 도구 사용)",
+      "사용자가 의도적으로 재생하는 비디오 콘텐츠 등은 예외가 될 수 있으나, 사전에 경고를 제공하는 것이 좋습니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#three-flashes-or-below-threshold"
+  },
+  {
+    "kwcagId": "6.4.1",
+    "kwcagTitle": "반복 영역 건너뛰기",
+    "description": "페이지에서 반복되는 내비게이션 등의 영역을 건너뛸 수 있는 수단을 제공해야 합니다.",
+    "automationType": "partial",
+    "axeRules": ["skip-link", "bypass"],
+    "manualCheckGuidance": [
+      "페이지 상단에 '본문 바로가기'와 같은 건너뛰기 링크가 제공되는지 확인하십시오.",
+      "건너뛰기 링크가 키보드로 접근 가능하고, 실제로 동작하는지 확인하십시오.",
+      "건너뛰기 링크가 시각적으로 숨겨져 있더라도 키보드 포커스를 받으면 드러나는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#bypass-blocks"
+  },
+  {
+    "kwcagId": "6.4.2",
+    "kwcagTitle": "제목 제공",
+    "description": "페이지, 프레임, 콘텐츠 블록에는 적절한 제목을 제공해야 한다.",
+    "automationType": "partial",
+    "axeRules": ["document-title", "frame-title", "heading-order", "empty-heading", "p-as-heading"],
+    "manualCheckGuidance": [
+      "모든 웹 페이지에 해당 페이지의 주제나 목적을 설명하는 고유하고 적절한 `<title>` 요소가 있는지 확인하십시오. (Axe 규칙 'document-title'이 검사합니다.)",
+      "페이지 내에 `<iframe>`이나 `<frame>` 요소가 사용된 경우, 각 프레임에 해당 프레임의 콘텐츠를 설명하는 `title` 속성이 제공되었는지 확인하십시오. (Axe 규칙 'frame-title'이 검사합니다.)",
+      "콘텐츠의 주요 섹션이나 블록에는 적절한 제목(<h1>-<h6>)이 제공되어 콘텐츠의 구조를 나타내는지 확인하십시오. (Axe 규칙 'heading-order', 'empty-heading', 'p-as-heading'이 관련 문제를 검사합니다.)",
+      "제목 텍스트가 해당 섹션의 내용을 명확하게 설명하는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#page-titled"
+  },
+  {
+    "kwcagId": "6.4.3",
+    "kwcagTitle": "적절한 링크 텍스트",
+    "description": "링크 텍스트는 용도나 목적을 이해할 수 있도록 제공해야 한다.",
+    "automationType": "partial",
+    "axeRules": ["link-name", "image-redundant-alt"],
+    "manualCheckGuidance": [
+      "링크 텍스트만으로도 링크의 목적이나 이동할 대상을 명확히 알 수 있는지 확인하십시오. (Axe 규칙 'link-name'이 링크에 접근 가능한 이름이 있는지 검사합니다.)",
+      "'여기를 클릭하세요', '더 보기'와 같이 모호한 링크 텍스트 사용을 피하고, 구체적인 내용을 포함하도록 하십시오. 만약 모호한 텍스트를 사용해야 한다면, `aria-label`이나 `aria-labelledby` 등을 통해 추가적인 컨텍스트를 제공해야 합니다.",
+      "동일한 페이지 내에서 동일한 링크 텍스트가 서로 다른 목적지로 연결되지 않는지 확인하십시오. 만약 그렇다면, 각 링크를 구분할 수 있는 추가 정보를 제공해야 합니다.",
+      "이미지만으로 구성된 링크의 경우, 이미지의 대체 텍스트가 링크의 목적을 명확히 설명하는지 확인하십시오. (Axe 규칙 'image-redundant-alt'가 링크 내 이미지의 중복 대체 텍스트를 검사할 수 있습니다.)"
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#link-text"
+  },
+  {
+    "kwcagId": "6.4.4",
+    "kwcagTitle": "고정된 참조 위치 정보",
+    "description": "전자출판문서 형식의 웹 페이지는 각 페이지로 이동할 수 있는 기능이 있어야 하고, 서식이나 플랫폼에 상관없이 참조 위치 정보를 일관되게 제공ㆍ유지해야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "EPUB과 같이 페이지 매김이 있는 전자 문서 형식의 웹 페이지인 경우, 각 페이지로 직접 이동할 수 있는 내비게이션 기능(예: 목차, 페이지 번호 입력)이 제공되는지 확인하십시오.",
+      "페이지 참조 정보(페이지 번호 등)가 다양한 보기 모드나 장치에서도 일관되게 유지되는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#page-break-navigation"
+  },
+  {
+    "kwcagId": "6.5.1",
+    "kwcagTitle": "단일 포인터 입력 지원",
+    "description": "다중 포인터 또는 경로기반 동작을 통한 입력은 단일 포인터 입력으로도 조작할 수 있어야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "두 손가락을 이용한 확대/축소(핀치 줌), 여러 손가락 스와이프, 복잡한 경로를 그리는 제스처 등 다중 포인터나 경로 기반 제스처로만 수행할 수 있는 기능이 있는지 확인하십시오.",
+      "만약 있다면, 해당 기능을 단일 포인터(예: 버튼 클릭, 탭)만으로도 동일하게 수행할 수 있는 대안적인 방법을 제공하는지 확인하십시오.",
+      "단, 경로 기반 제스처가 기능 수행에 필수적인 경우(예: 전자 서명 그리기)는 예외입니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#pointer-gestures"
+  },
+  {
+    "kwcagId": "6.5.2",
+    "kwcagTitle": "포인터 입력 취소",
+    "description": "단일 포인터 입력으로 실행되는 기능은 취소할 수 있어야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "단일 포인터(마우스 클릭, 화면 탭 등)를 사용하는 기능이 포인터를 누르는 즉시(down-event) 완료되는지, 아니면 포인터를 뗄 때(up-event) 완료되는지 확인하십시오.",
+      "만약 누르는 즉시 기능이 완료된다면, 사용자가 의도치 않은 작동을 취소할 수 있는 방법(예: 포인터를 컨트롤 밖으로 드래그한 후 떼기)을 제공하거나, 해당 기능이 누르는 즉시 완료되는 것이 필수적인지(예: 피아노 건반 누르기) 확인하십시오.",
+      "대부분의 버튼, 링크 등의 컨트롤은 포인터를 뗄 때(up-event) 기능이 실행되도록 구현하여 사용자가 실수로 눌렀을 경우 취소할 수 있도록 해야 합니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#pointer-cancellation"
+  },
+  {
+    "kwcagId": "6.5.3",
+    "kwcagTitle": "레이블과 네임",
+    "description": "텍스트 또는 텍스트 이미지가 포함된 레이블이 있는 사용자 인터페이스 구성요소는 시각적으로 표시되는 해당 텍스트를 네임에 포함해야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "사용자 인터페이스 구성요소(버튼, 링크 등)에 시각적으로 표시되는 텍스트 레이블이 있는 경우, 해당 텍스트가 요소의 접근 가능한 이름(accessible name)의 일부로 포함되어 있는지 확인하십시오. (Axe 규칙 'label-in-name'이 이 부분을 검사합니다.)",
+      "예를 들어, 버튼에 '검색'이라고 표시되어 있다면, 스크린 리더 사용자에게도 '검색 버튼'으로 인식되어야 하며, '찾기 버튼'과 같이 다른 이름으로 인식되어서는 안 됩니다.",
+      "이는 음성 입력 사용자가 화면에 보이는 대로 명령하여 컨트롤을 조작할 수 있도록 하는 데 중요합니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#label-in-name"
+  },
+  {
+    "kwcagId": "6.5.4",
+    "kwcagTitle": "동작기반 작동",
+    "description": "동작기반으로 작동하는 기능은 사용자 인터페이스 구성요소로 조작할 수 있고, 동작기반 기능을 비활성화할 수 있어야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "장치 모션(흔들기, 기울이기 등)이나 사용자 모션(카메라를 향해 손 흔들기 등)을 통해 작동하는 기능이 있는지 확인하십시오.",
+      "만약 있다면, 해당 기능을 일반적인 사용자 인터페이스 컨트롤(버튼, 링크 등)을 통해서도 동일하게 수행할 수 있는지 확인하십시오.",
+      "또한, 사용자가 의도하지 않은 모션으로 기능이 작동하는 것을 방지하기 위해 모션 기반 작동 기능을 비활성화할 수 있는 설정을 제공하는지 확인하십시오.",
+      "단, 모션이 접근성 지원 인터페이스(예: 스위치 컨트롤, 시선 추적)를 통해 제어되거나, 모션이 기능 수행에 필수적인 경우(예: 만보계 앱)는 예외입니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#motion-actuation"
+  },
+  {
+    "kwcagId": "7.1.1",
+    "kwcagTitle": "기본 언어 표시",
+    "description": "주로 사용하는 언어를 명시해야 한다.",
+    "axeRules": ["html-has-lang", "html-lang-valid", "valid-lang"],
+    "manualCheckGuidance": [
+      "HTML 문서의 `<html>` 요소에 `lang` 속성을 사용하여 페이지의 기본 언어가 명시되어 있는지 확인하십시오. (Axe 규칙 'html-has-lang'이 검사합니다.)",
+      "명시된 `lang` 속성 값이 유효한 언어 코드(예: 'ko', 'en')인지 확인하십시오. (Axe 규칙 'html-lang-valid', 'valid-lang'이 검사합니다.)",
+      "페이지 내용의 일부가 기본 언어와 다른 언어로 작성된 경우, 해당 부분에 적절한 `lang` 속성을 사용하여 언어 변경을 명시했는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#language-of-page"
+  },
+  {
+    "kwcagId": "7.2.1",
+    "kwcagTitle": "사용자 요구에 따른 실행",
+    "description": "사용자가 의도하지 않은 기능(새 창, 초점에 의한 맥락 변화 등)은 실행되지 않아야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "사용자가 특정 컨트롤에 초점을 옮기거나 값을 입력하는 것만으로 자동으로 컨텍스트(예: 페이지 내용 변경, 새 창 열림, 초점 이동)가 변경되지 않는지 확인하십시오.",
+      "컨텍스트 변경은 사용자가 명시적으로 링크를 클릭하거나 버튼을 누르는 등의 행동을 했을 때만 발생해야 합니다.",
+      "만약 특정 상황에서 자동으로 컨텍스트 변경이 필요하다면, 변경 전에 사용자에게 이를 알리고 동의를 구하는 절차가 있는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#change-on-request"
+  },
+  {
+    "kwcagId": "7.2.2",
+    "kwcagTitle": "찾기 쉬운 도움 정보",
+    "description": "도움 정보가 제공되는 경우, 각 페이지에서 동일한 상대적인 순서로 접근할 수 있어야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "웹사이트 전반에 걸쳐 도움말 정보(예: FAQ, 고객 지원 연락처, 사용 설명서)가 제공되는 경우, 해당 정보로 연결되는 링크나 버튼이 모든 페이지에서 일관된 위치에 제공되는지 확인하십시오.",
+      "예를 들어, 도움말 링크가 항상 페이지 헤더의 오른쪽 상단이나 푸터의 특정 위치에 있다면 이 기준을 충족합니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#consistent-help"
+  },
+  {
+    "kwcagId": "7.3.1",
+    "kwcagTitle": "오류 정정",
+    "description": "입력 오류를 정정할 수 있는 방법을 제공해야 한다.",
+    "automationType": "partial",
+    "axeRules": ["aria-required-attr", "aria-valid-attr-value"],
+    "manualCheckGuidance": [
+      "사용자가 양식에 데이터를 입력하다 오류가 발생했을 때, 어떤 필드에서 오류가 발생했는지 명확하게 알려주는지 확인하십시오. (Axe 규칙 'aria-required-attr', 'aria-valid-attr-value', 'required-fields' 등이 관련될 수 있습니다.)",
+      "오류 메시지가 텍스트로 제공되고, 오류가 발생한 필드와 명확하게 연관되어 표시되는지 확인하십시오.",
+      "오류를 수정하는 방법에 대한 구체적인 지침이나 제안을 제공하는지 확인하십시오. (예: '날짜는 YYYY-MM-DD 형식으로 입력해주세요.')",
+      "법적 또는 금융 거래와 같이 중요한 데이터를 제출하는 경우, 사용자가 제출 전에 입력 내용을 검토하고 수정할 수 있는 기회를 제공하거나, 제출 후 일정 시간 내에 취소하거나 수정할 수 있는 기능을 제공하는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#error-identification"
+  },
+  {
+    "kwcagId": "7.3.2",
+    "kwcagTitle": "레이블 제공",
+    "description": "사용자 입력에는 대응하는 레이블을 제공해야 한다.",
+    "automationType": "partial",
+    "axeRules": ["label", "form-field-multiple-labels"],
+    "manualCheckGuidance": [
+      "모든 사용자 입력 컨트롤(텍스트 필드, 체크박스, 라디오 버튼, 드롭다운 목록 등)에 명확한 레이블이 제공되는지 확인하십시오. (Axe 규칙 'label', 'aria-label', 'aria-labelledby', 'form-field-multiple-labels', 'placeholder-label' 등이 관련 문제를 검사합니다.)",
+      "레이블은 해당 입력 필드가 어떤 정보를 요구하는지 명확하게 설명해야 합니다.",
+      "레이블은 시각적으로뿐만 아니라 프로그램적으로도 입력 필드와 연결되어야 합니다. (예: `<label for=\"inputId\">` 사용)",
+      "필수 입력 항목인 경우, 레이블이나 다른 수단을 통해 명확하게 표시하는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#labels-or-instructions"
+  },
+  {
+    "kwcagId": "7.3.3",
+    "kwcagTitle": "접근 가능한 인증",
+    "description": "인증 과정은 인지 기능 테스트에만 의존해서는 안 된다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "로그인, 회원가입 등 사용자 인증 과정에서 인지 기능 테스트(예: 퍼즐 풀기, 특정 패턴 기억하기, 복잡한 계산하기)에만 의존하지 않는지 확인하십시오. (Axe 규칙 'captcha'가 CAPTCHA 사용을 탐지하며, 이는 인지 테스트의 한 형태일 수 있습니다.)",
+      "만약 CAPTCHA와 같은 인지 테스트가 사용된다면, 시각적/청각적 인지 능력에 의존하지 않는 대안적인 인증 방법(예: 이메일 인증, SMS 인증, 보안 질문 답변, 객체 인식 기반이 아닌 텍스트 기반 CAPTCHA의 오디오 버전)을 제공하는지 확인하십시오.",
+      "사용자 이름과 비밀번호 입력 외에 추가적인 인증 단계가 있다면, 해당 단계가 다양한 사용자가 접근 가능한 방식으로 제공되는지 확인하십시오."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#accessible-authentication"
+  },
+  {
+    "kwcagId": "7.3.4",
+    "kwcagTitle": "반복 입력 정보",
+    "description": "반복되는 입력 정보는 자동 입력 또는 선택 입력할 수 있어야 한다.",
+    "automationType": "partial",
+    "axeRules": ["autocomplete-valid"],
+    "manualCheckGuidance": [
+      "여러 단계로 구성된 프로세스나 동일 세션 내에서 사용자가 이전에 입력했던 정보를 다시 입력해야 하는 경우, 해당 정보가 자동으로 채워지거나 사용자가 쉽게 선택하여 입력할 수 있도록 지원하는지 확인하십시오. (HTML `autocomplete` 속성이 올바르게 사용되면 Axe 규칙 'autocomplete-valid'로 검사 가능합니다.)",
+      "예를 들어, 배송 주소와 청구 주소가 동일한 경우, '배송 주소와 동일' 체크박스를 제공하여 반복 입력을 피할 수 있도록 합니다.",
+      "단, 보안상 민감한 정보(예: 비밀번호, 신용카드 CVV)나 재확인이 필수적인 정보는 예외일 수 있습니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#redundant-entry"
+  },
+  {
+    "kwcagId": "8.1.1",
+    "kwcagTitle": "마크업 오류 방지",
+    "description": "마크업 언어의 요소는 열고 닫음, 중첩 관계 및 속성 선언에 오류가 없어야 한다.",
+    "automationType": "partial",
+    "axeRules": ["duplicate-id-active", "duplicate-id-aria", "aria-valid-attr", "aria-valid-attr-value"],
+    "manualCheckGuidance": [
+      "HTML 요소의 시작 태그와 종료 태그가 올바르게 쌍을 이루고, 중첩 순서가 올바른지 확인하십시오. (W3C HTML Validator와 같은 도구를 사용하는 것이 가장 효과적입니다.)",
+      "모든 요소의 ID 속성 값은 페이지 내에서 고유해야 합니다. (Axe 규칙 'duplicate-id-active', 'duplicate-id-aria'가 일부 검사합니다.)",
+      "요소에 사용된 속성들이 해당 요소에 유효하며, 속성 값 또한 올바른 형식을 따르는지 확인하십시오. (Axe 규칙 'aria-valid-attr', 'aria-valid-attr-value' 등이 ARIA 속성에 대해 검사합니다.)",
+      "마크업 오류는 보조 기술의 페이지 해석을 방해하여 접근성 문제를 야기할 수 있습니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#parsing"
+  },
+  {
+    "kwcagId": "8.2.1",
+    "kwcagTitle": "웹 애플리케이션 접근성 준수",
+    "description": "콘텐츠에 포함된 웹 애플리케이션은 접근성이 있어야 한다.",
+    "automationType": "manual",
+    "axeRules": [],
+    "manualCheckGuidance": [
+      "페이지 내에 포함된 웹 애플리케이션(예: 사용자 정의 위젯, 단일 페이지 애플리케이션의 일부)이 KWCAG 2.2의 다른 모든 관련 검사 항목을 준수하는지 종합적으로 확인하십시오.",
+      "특히 사용자 정의 컨트롤의 경우, 키보드 접근성, ARIA 역할·상태·속성 제공, 명확한 레이블 및 지침 제공 등이 중요합니다."
+    ],
+    "kwcagLink": "https://a11ykr.github.io/kwcag22/#accessible-web-application"
+  }
+]

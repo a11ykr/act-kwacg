@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>KWCAG 2.2 검사</title>
+	<link rel="stylesheet" href="../css/panel.css" />
+</head>
+
+<body>
+	<h1>KWCAG 2.2 검사</h1>
+	<button id="scanButton">현재 페이지 검사</button>
+	<div id="results">
+		<p>검사 버튼을 클릭하여 접근성 분석을 시작하세요.</p> <!-- 초기 메시지 panel.js에서 제거하고 HTML에 직접 추가 -->
+	</div>
+	<div id="loading" style="display:none;">검사 중...</div> <!-- panel.js에서 참조하므로 추가 -->
+	<script src="../js/components/kwcag-translator.js"></script> <!-- panel/ 디렉토리 기준 상대 경로 -->
+	<script src="panel.js"></script> <!-- panel.js는 panel.html과 같은 디렉토리에 있으므로 ./panel.js 또는 panel.js -->
+</body>
+</html>
