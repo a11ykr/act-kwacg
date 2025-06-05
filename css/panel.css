@@ -20,3 +20,14 @@ button:hover {
 #results {
 	margin-top: 16px;
 }
+
+.kwcag-report-list {
+	padding: 0;
+}
+.kwcag-report-list>li {
+	margin: 0;
+	list-style: none;
+}
+.kwcag-report-list .kwcag-item-details h3 {
+	display: inline-block;
+}
